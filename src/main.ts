@@ -48,11 +48,13 @@ const EXPENSE_CATEGORIES: ExpenseCategory[] = [
   'Lainnya',
 ]
 
-const appRoot = document.querySelector<HTMLDivElement>('#app')
+const rootElement = document.querySelector<HTMLDivElement>('#app')
 
-if (!appRoot) {
+if (!rootElement) {
   throw new Error('Root element #app tidak ditemukan.')
 }
+
+const appRoot = rootElement
 
 let editingId: string | null = null
 let statusMessage: StatusMessage | null = null
