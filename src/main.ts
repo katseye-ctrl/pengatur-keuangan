@@ -148,7 +148,7 @@ function getTotalExpenses(): number {
 }
 
 function getRemainingBudget(): number {
-  return state.monthlyIncome + getTotalIncome() - getTotalExpenses()
+  return getTotalIncome() - getTotalExpenses()
 }
 
 function getCategoryTotals(): Array<{ label: ExpenseCategory; total: number }> {
@@ -493,7 +493,7 @@ function render() {
             <div class="field-row two-column">
               <label class="field">
                 <span>Nominal</span>
-                <input name="amount" type="number" min="1" step="1000" value="${formState.amount}" placeholder="50000" aria-label="Nominal transaksi" />
+                <input name="amount" type="number" min="0" step="1" inputmode="numeric" value="${formState.amount}" placeholder="50000" aria-label="Nominal transaksi" required />
               </label>
 
               <label class="field">
@@ -559,6 +559,8 @@ function render() {
           </div>
         `}
       </section>
+
+      <footer class="site-footer">Website milik Abimanyu</footer>
     </div>
   `
 
